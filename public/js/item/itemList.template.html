@@ -63,6 +63,11 @@
              <textarea placeholder="Description" name="description" ng-model="$ctrl.item.description" class="form-control" required></textarea>
          </div>
 
+         <!--recaptcha  -->
+         <div class="row" ng-show="!$ctrl.captchaToken">
+           <div vc-recaptcha key="$ctrl.captchaKey"style="display:flex; justify-content:center;"></div>
+         </div>
+
          <button type="submit" class="btn btn-primary" ng-disabled="$ctrl.newItem.$invalid">Sell it!</button>
 
          <button type="button" class="btn btn-default" ng-click="$ctrl.openForm()">No, I can't sell it.</button>
